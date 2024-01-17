@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/Captura.PNG" type="image/x-icon">
+    <title>Instagram Photo Feed With Bootstrap</title>
+    <!-- Your Bootstrap Link should always be before the CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <!-- Navigator with an image, text, modal and dropdown on it -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./img/Captura.PNG" alt="" width="30" height="24" class="d-inline-block  align-middle ">
+                <span class="align-middle ">Instagram</span>
+            </a>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <!--Modal button trigger-->
+                <button class="btn btn-success me-md-2" data-bs-toggle="modal" data-bs-target="#new-post-modal"
+                    type="button">Create a new post</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="new-post-modal" tabindex="-1" aria-labelledby="new-post-modal"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="new-post-modal">Create a mew post</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <textarea name="Caption:" id="Caption" cols="60" rows="2"
+                                    placeholder="Add the caption of your post here"></textarea>
+                                <button type="button" class="btn btn-outline-secondary"><i
+                                        class="bi bi-camera"></i></button>
+                                <button type="button" class="btn btn-outline-secondary"><i
+                                        class="bi bi-geo-alt"></i></button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-success">Publish</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Dropdown statrt-->
+                <div class="btn-group dropdown">
+                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-gear-fill"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start">
+                        <!-- Dropdown menu links -->
+                        <li class="dropdown-item">Profile</li>
+                        <li class="dropdown-item">Accesibility</li>
+                        <li class="dropdown-item">Privacy and data</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-item text-danger">Log out</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--Dynamic tabs-->
+    <div class="container-fluid">
+        <nav>
+            <div class="nav nav-tabs  justify-content-md-center" id="nav-tab" role="tablist">
+                <button class="nav-link active   " id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                    type="button" role="tab" aria-controls="nav-home" aria-selected="true"><i
+                        class="bi bi-grid-3x3"></i></button>
+                <button class="nav-link   " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                    type="button" role="tab" aria-controls="nav-profile" aria-selected="false"><i
+                        class="bi bi-app"></i></button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active container-fluid" id="nav-home" role="tabpanel"
+                aria-labelledby="nav-home-tab">
+                imagenes en 3 columnas
+                <div class="container-fluid row m-2">
+                    <div class="col">
+                        <img src="./img/coco.jpg" height="200px" alt="dog" class="  img-fluid   ">
+                    </div>
+                    <div class="col">
+                        <img src="./img/coco2.jpg" height="200px" alt="puppy" class="   img-fluid  ">
+                    </div>
+                    <div class="col">
+                        <img src="./img/coco3.jpg" height="200px" alt="Pomsky-pup" class="img-fluid  ">
+                    </div>
+                </div>
+
+                <div class="container-fluid row m-2">
+                    <div class="col">
+                        <img src="./img/coco.jpg" height="200px" alt="dog" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="./img/coco2.jpg" height="200px" alt="puppy" class="img-fluid">
+                    </div>
+                    <div class="col">
+                        <img src="./img/coco3.jpg" height="200px" alt="Pomsky-pup" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade justify-content-md-center" id="nav-profile" role="tabpanel"
+                aria-labelledby="nav-profile-tab">
+
+                <div class="card border-success mb-3" style="max-width: 18rem;">
+                    <div class="card-header bg-transparent border-success container justify-content-around">
+                        <h2>My querido Coco</h2>
+                        <span>08/26</span>
+                    </div>
+                    <div class="card-body">
+                        <img src="./img/coco.jpg" class="card-img-top" alt="...">
+                    </div>
+                    <div class="card-footer bg-transparent border-success">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras purus neque, finibus ac nibh a, vehicula ornare lectus. Sed id dui viverra, lacinia tortor a, bibendum odio. Vestibulum lacinia risus non tortor tristique finibus. Duis sem justo, venenatis ut erat sed, sagittis hendrerit odio. Etiam rhoncus convallis mattis.</div>
+                  </div>    
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JS files DON'T REMOVE THESE FILES -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
